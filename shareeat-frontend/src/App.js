@@ -34,6 +34,7 @@ import Home from './pages/Home';
 
 function App() {
   return (
+    <div className='bg-gradient-to-r from-[rgba(55,35,56,1)] to-[rgba(111,39,64,1)]' >
     <Router>
       <div>
         <Routes>
@@ -42,6 +43,10 @@ function App() {
         </Routes>
       </div>
     </Router>
+
+    <NgoList></NgoList>
+
+    </div>
   );
 }
 
