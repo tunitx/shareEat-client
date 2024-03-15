@@ -23,7 +23,7 @@ const Header = () => {
 
 
     return (
-        <nav className="w-full  shadow bg-red-600">
+        <nav className="w-full shadow bg-gradient-to-r from-[rgba(55,35,56,1)] to-[rgba(111,39,64,1)]">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -82,9 +82,6 @@ const Header = () => {
                                 <Link to="/">Home</Link>
                             </li>{" "}
                             <li className="text-white hover:text-indigo-200">
-                                <Link to="/market">Sign In/Sign Up</Link>
-                            </li>
-                            <li className="text-white hover:text-indigo-200">
                                 <Link to="/collections">Dashboard</Link>
                             </li>
 
@@ -109,7 +106,7 @@ const Header = () => {
                     </div>
                 </div>
 
-                <div className="hidden space-x-3 md:inline-block">
+                <div className="hidden space-x-3 md:inline-block ">
 
                     <button
                         // to="javascript:void(0)
@@ -120,9 +117,14 @@ const Header = () => {
                         List Food
                     </button>
 
+                    
+
 
                 </div>
 
+                <button  className="text-white text-sm p-2 rounded-sm border ">
+                    <Link to="/market">Sign In/Sign Up</Link>
+                    </button>
 
 
                 <div className="hidden space-x-3 md:inline-block">
