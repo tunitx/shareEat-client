@@ -30,9 +30,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route,  Routes } from 'react-router-dom';
 import Header from './components/Navbar';
+import NgoList from './components/NgoList';
 
 function App() {
   return (
+    <div className='bg-gradient-to-r from-[rgba(55,35,56,1)] to-[rgba(111,39,64,1)]' >
     <Router>
       <div>
         <Routes>
@@ -41,6 +43,10 @@ function App() {
         </Routes>
       </div>
     </Router>
+
+    <NgoList></NgoList>
+
+    </div>
   );
 }
 
