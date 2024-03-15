@@ -25,9 +25,9 @@ function DonorListForm() {
     return (
         <div className='flex flex-col items-center'>
             <form onSubmit={submitHandler}>
-                <h1>Restaurant/Eatery Donor Registration</h1>
-                <label htmlFor="name">Name</label>
+                <h1 className='text-white text-xl font-bold mt-3'>Restaurant/Eatery Donor Registration</h1>
                 <br></br>
+                <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="name">Name</label>
                 <input
                     type="text"
                     name="name"
@@ -35,9 +35,10 @@ function DonorListForm() {
                     placeholder="Yash"
                     value={formData.name}
                     onChange={changeHandler}
-                    className='outline'
+                    className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-2"
                 />
-                <label htmlFor="email">Email</label>
+                <br></br>
+                <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="email">Email</label>
                 <br></br>
                 <input
                     type="email"
@@ -46,9 +47,10 @@ function DonorListForm() {
                     placeholder="yashmathur14@gmail.com"
                     value={formData.email}
                     onChange={changeHandler}
-                    className='outline'
+                    className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-2"
                 />
-                <label htmlFor="phoneNumber">Phone Number</label>
+                <br></br>
+                <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="phoneNumber">Phone Number</label>
                 <br></br>
                 <input
                     type="tel"
@@ -57,10 +59,10 @@ function DonorListForm() {
                     placeholder="1234567890"
                     value={formData.phoneNumber}
                     onChange={changeHandler}
-                    className='outline'
+                    className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-2"
                 />
-
-                <label htmlFor="address">Address</label>
+                <br></br>
+                <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="address">Address</label>
                 <br></br>
                 <input
                     type="text"
@@ -69,17 +71,18 @@ function DonorListForm() {
                     placeholder="1234567890"
                     value={formData.address}
                     onChange={changeHandler}
-                    className='outline'
+                    className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-2"
                 />
-                <label htmlFor="foodType">Food Type</label>
                 <br></br>
-                <select name="foodType" id="foodType" value={formData.foodType} onChange={changeHandler}>
+                <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="foodType">Food Type</label>
+                <br></br>
+                <select className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mb-2 mt-2" name="foodType" id="foodType" value={formData.foodType} onChange={changeHandler}>
                     <option value="">Select...</option>
                     <option value="veg">Veg</option>
                     <option value="nonVeg">Non Veg</option>
                 </select>
                 <br></br>
-                <label htmlFor="openingTime">Opening Time</label>
+                <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="openingTime">Opening Time</label>
                 <br></br>
                 <input
                     type="time"
@@ -87,10 +90,10 @@ function DonorListForm() {
                     id="openingTime"
                     value={formData.openingTime}
                     onChange={changeHandler}
-                    className='outline'
+                    className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-2"
                 />
                 <br></br>
-                <label htmlFor="closingTime">Closing Time</label>
+                <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="closingTime">Closing Time</label>
                 <br></br>
                 <input
                     type="time"
@@ -98,7 +101,7 @@ function DonorListForm() {
                     id="closingTime"
                     value={formData.closingTime}
                     onChange={changeHandler}
-                    className='outline'
+                    className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-4"
                 />
                 <br></br>
                 <button className='bg-blue-500 text-white font-bold rounded py-2 px-4 '>Save

@@ -44,7 +44,7 @@ function App() {
       </div>
     </Router>
 
-    <NgoList></NgoList>
+    
 
     </div>
   );
