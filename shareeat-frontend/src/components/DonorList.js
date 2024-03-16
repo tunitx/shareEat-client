@@ -40,8 +40,9 @@ function DonorListForm() {
               'Your data has been submitted successfully!',
               'success'
             );
+            navigate('/')
           })
-          navigate('/')
+          
           .catch((error) => {
             console.error('Error:', error);
             Swal.fire(

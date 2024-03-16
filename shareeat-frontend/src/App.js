@@ -9,6 +9,9 @@ import DonorListForm from './components/DonorList';
 import NgoRegistration from './components/NgoList';
 import DonorRegistration from './pages/DonorRegistration';
 import NgoRegistrationPage from './pages/NgoRegistration';
+import DonorListingPage from './pages/DonorListingPage';
+import Dash from './pages/Dash';
+<Dash/>
 
 function App() {
   return (
@@ -21,6 +24,8 @@ function App() {
           <Route path='/signin'element = {<SignIn/>} />
           <Route path='/donor-registration' element={<DonorRegistration/>} />
           <Route path='/ngo-registration' element={<NgoRegistrationPage/>} />
+          <Route path='/donor-listing' element={<DonorListingPage/>} />
+          <Route path='/dash' element={<Dash/>} />
           
         </Routes>
       </div>

@@ -87,7 +87,13 @@ const Header = () => {
                                 <Link to="/">Home</Link>
                             </li>{" "}
                             <li className="text-white hover:text-indigo-200">
-                                <Link to="/collections">Dashboard</Link>
+                                <Link to="/dash">Dashboard</Link>
+                            </li>
+                            <li className="text-white hover:text-indigo-200">
+                                <Link to="/ngo-registration">NGO</Link>
+                            </li>
+                            <li className="text-white hover:text-indigo-200">
+                                <Link to="/donor-registration">Donor</Link>
                             </li>
 
 
@@ -103,7 +109,7 @@ const Header = () => {
 
                         <button
                             // to="javascript:void(0)
-                            onClick={() => { }}
+                            onClick={() => { navigate('/donor-listing') }}
                             className="text-white w-full text-sm p-2 bg-[#e32970] hover:bg-[#bd255f] rounded-sm flex flex-row justify-center items-center shadow-md shadow-gray-700 mr-2"
                         >
                             List Food

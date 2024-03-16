@@ -7,20 +7,20 @@ import Banner from '../components/Hero';
 import JoinUs from '../components/Joinus';
 import Footer from '../components/Footer';
 import ListingsOfDonor from '../components/ListingsOfDonor';
+import DonorTable from '../components/ListingRequests';
 import Dashboard from '../components/Dashboard';
 
 
-const Home = () => {
+const Dash = () => {
     return (
         <div>
-          <Header/>
-          <Banner/>
-          <Footer/>
-          {/* <ListingsOfDonor/> */}
-          {/* <Dashboard/> */}
           
+          <Header/>
+          <Dashboard/>
+          {/* <DonorTable/> */}
+          <Footer/>
         </div>
     );
 };
 
-export default Home;
+export default Dash;
