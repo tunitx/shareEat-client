@@ -8,14 +8,14 @@ import JoinUs from '../components/Joinus';
 import Footer from '../components/Footer';
 
 
-const Home = () => {
+const DonorRegistration = () => {
     return (
         <div>
           <Header/>
-          <Banner/>
+          <DonorListForm/>
           <Footer/>
         </div>
     );
 };
 
-export default Home;
+export default DonorRegistration;

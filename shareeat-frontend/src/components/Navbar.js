@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 const divStyle = {
@@ -13,9 +14,11 @@ const divStyle = {
 };
 
 const Header = () => {
+    const navigate = useNavigate()
 
     const [isOpen, setIsOpen] = useState(false);
     const [navbar, setNavbar] = useState(false);
+    // const [showSignUp, setShowSignUp] = useState(false);
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -23,7 +26,7 @@ const Header = () => {
 
 
     return (
-        <nav className="w-full border-b shadow bg-gradient-to-r from-[rgba(55,35,56,1)] to-[rgba(111,39,64,1)]">
+        <nav className="w-full border-b shadow gradient-bg-footer">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -74,7 +77,7 @@ const Header = () => {
                 </div>
                 <div>
                     <div
-                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${navbar ? "block" : "hidden"
+                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ml-30 ${navbar ? "block" : "hidden"
                             }`}
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
@@ -88,58 +91,44 @@ const Header = () => {
 
                         </ul>
                         <div className="mt-3 space-y-2 lg:hidden md:hidden">
-                            {/* <ConnectButton
-                className="btn-design  inline-block w-full px-4 py-2 text-center text-white bg-gray-600 rounded-md shadow hover:bg-gray-800"
-                style={divStyle}
-                accountStatus={{
-                  smallScreen: "full",
-                  largeScreen: "full",
-                }}
-                showBalance={{
-                  smallScreen: true,
-                  largeScreen: true,
-                }}
-              /> */}
                         </div>
 
 
                     </div>
                 </div>
+                <div className="flex flex-row ">
+                    <div className=" flex flex-row justify-start">
 
-                <div className="hidden space-x-3 md:inline-block ">
+                        <button
+                            // to="javascript:void(0)
+                            onClick={() => { }}
+                            className="text-white w-full text-sm p-2 bg-[#e32970] hover:bg-[#bd255f] rounded-sm flex flex-row justify-center items-center shadow-md shadow-gray-700 mr-2"
+                        >
+                            List Food
+                        </button>
+                    </div>
+                    <div className=" flex flex-row ">
 
-                    <button
-                        // to="javascript:void(0)
-                        onClick={() => {}}
-                        className="text-white w-full text-sm p-2 bg-[#e32970] hover:bg-[#bd255f] rounded-sm
- flex flex-row justify-center items-center shadow-md shadow-gray-700 "
-                    >
-                        List Food
-                    </button>
+                        {!localStorage.getItem('token') && (
+                            <>
+                                <button className="text-white text-sm p-2 rounded-sm border mr-2" onClick={() => navigate('/signup')}>
+                                    SignUp
+                                </button>
+                                <button className="text-white text-sm p-2 rounded-sm border " onClick={() => {
+                                    navigate('/signin')
+                                }}>
+                                    Sign In
+                                </button>
+                                
 
-                    
-
-
+                            </>
+                        )}
+                    </div>
+                   
                 </div>
 
-                <button  className="text-white text-sm p-2 rounded-sm border ">
-                    <Link to="/market">Sign In/Sign Up</Link>
-                    </button>
-
-
                 <div className="hidden space-x-3 md:inline-block">
-                    {/* <ConnectButton
-            className="btn-design"
-           
-            accountStatus={{
-              smallScreen: "full",
-              largeScreen: "full",
-            }}
-            showBalance={{
-              smallScreen: true,
-              largeScreen: true,
-            }}
-          /> */}
+             
                 </div>
             </div>
         </nav>

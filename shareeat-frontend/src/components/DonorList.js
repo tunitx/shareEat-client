@@ -23,89 +23,109 @@ function DonorListForm() {
     }
 
     return (
-        <div className='flex flex-col items-center'>
-            <form onSubmit={submitHandler}>
-                <h1 className='text-white text-xl font-bold mt-3'>Restaurant/Eatery Donor Registration</h1>
-                <br></br>
-                <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="name">Name</label>
-                <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Yash"
-                    value={formData.name}
-                    onChange={changeHandler}
-                    className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-2"
-                />
-                <br></br>
-                <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="email">Email</label>
-                <br></br>
-                <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="yashmathur14@gmail.com"
-                    value={formData.email}
-                    onChange={changeHandler}
-                    className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-2"
-                />
-                <br></br>
-                <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="phoneNumber">Phone Number</label>
-                <br></br>
-                <input
-                    type="tel"
-                    name="phoneNumber"
-                    id="phoneNumber"
-                    placeholder="1234567890"
-                    value={formData.phoneNumber}
-                    onChange={changeHandler}
-                    className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-2"
-                />
-                <br></br>
-                <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="address">Address</label>
-                <br></br>
-                <input
-                    type="text"
-                    name="address"
-                    id="address"
-                    placeholder="1234567890"
-                    value={formData.address}
-                    onChange={changeHandler}
-                    className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-2"
-                />
-                <br></br>
-                <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="foodType">Food Type</label>
-                <br></br>
-                <select className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mb-2 mt-2" name="foodType" id="foodType" value={formData.foodType} onChange={changeHandler}>
-                    <option value="">Select...</option>
-                    <option value="veg">Veg</option>
-                    <option value="nonVeg">Non Veg</option>
-                </select>
-                <br></br>
-                <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="openingTime">Opening Time</label>
-                <br></br>
-                <input
-                    type="time"
-                    name="openingTime"
-                    id="openingTime"
-                    value={formData.openingTime}
-                    onChange={changeHandler}
-                    className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-2"
-                />
-                <br></br>
-                <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="closingTime">Closing Time</label>
-                <br></br>
-                <input
-                    type="time"
-                    name="closingTime"
-                    id="closingTime"
-                    value={formData.closingTime}
-                    onChange={changeHandler}
-                    className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-4"
-                />
-                <br></br>
-                <button className='bg-blue-500 text-white font-bold rounded py-2 px-4 '>Save
-                </button>
+
+
+
+
+        <div className="bg-white px-6 py-12 sm:py-24 lg:px-8 flex flex-col items-center">
+            <form onSubmit={submitHandler} className="mx-auto  max-w-xl ">
+                <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-custom-color mb-8 whitespace-nowrap">Eatery Donor Registration</h1>
+                <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                    <div>
+                        <label for="name" className="block text-sm font-semibold leading-6 text-gray-900">Name</label>
+                        <div className="mt-2.5">
+                            <input
+                                type="text"
+                                name="name"
+                                id="name"
+                                placeholder="Yash"
+                                value={formData.name}
+                                onChange={changeHandler}
+                                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email" className="block text-sm font-semibold leading-6 text-gray-900">Email</label>
+                        <div className="mt-2.5">
+                            <input
+                                type="email"
+                                name="email"
+                                id="email"
+                                placeholder="yashmathur14@gmail.com"
+                                value={formData.email}
+                                onChange={changeHandler}
+                                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="phoneNumber" className="block text-sm font-semibold leading-6 text-gray-900">Phone Number</label>
+                        <div className="mt-2.5">
+                            <input
+                                type="tel"
+                                name="phoneNumber"
+                                id="phoneNumber"
+                                placeholder="1234567890"
+                                value={formData.phoneNumber}
+                                onChange={changeHandler}
+                                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="address" className="block text-sm font-semibold leading-6 text-gray-900">Address (Google Maps URL)</label>
+                        <div className="mt-2.5">
+                            <input
+                                type="text"
+                                name="address"
+                                id="address"
+                                value={formData.address}
+                                onChange={changeHandler}
+                                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="foodType" className="block text-sm font-semibold leading-6 text-gray-900">Food Type</label>
+                        <div className="mt-2.5">
+                            <select className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6" name="foodType" id="foodType" value={formData.foodType} onChange={changeHandler}>
+                                <option value="">Select...</option>
+                                <option value="veg">Veg</option>
+                                <option value="nonVeg">Non Veg</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="openingTime" className="block text-sm font-semibold leading-6 text-gray-900">Opening Time</label>
+                        <div className="mt-2.5">
+                            <input
+                                type="time"
+                                name="openingTime"
+                                id="openingTime"
+                                value={formData.openingTime}
+                                onChange={changeHandler}
+                                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="closingTime" className="block text-sm font-semibold leading-6 text-gray-900">Closing Time</label>
+                        <div className="mt-2.5">
+                            <input
+                                type="time"
+                                name="closingTime"
+                                id="closingTime"
+                                value={formData.closingTime}
+                                onChange={changeHandler}
+                                className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div className="mt-10">
+                    <button type="submit" className="bg-blue-600 text-white rounded-sm py-2 w-full block">Save</button>
+                </div>
             </form>
         </div>
     );

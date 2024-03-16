@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
 
-function App() {
+function NgoRegistration() {
   const [formData,setFormData] = useState({
     ngoName: "",
     phoneNo: "",
     email: "",
-    address: "India",
+    address: "",
   })
 
   function changeHandler(event) {
@@ -22,67 +22,75 @@ function App() {
 
   return (
     
-    <div className='flex flex-col items-center'>
-    <br></br>
-     <form onSubmit={submitHandler}>
-
-      <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="ngoName">NGO Name</label>
-      <br></br>
-      <input 
-      type="text" 
-      name="ngoName"
-      id="ngoName"
-      placeholder="Ngo Name"
-      value={formData.ngoName}
-      onChange={changeHandler}
-      className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-2"
-      />
-
-      <br></br>
-      <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="phoneNo">Phone No</label>
-      <br></br>
-      <input 
-      type="number" 
-      name="phoneNo"
-      id="phoneNo"
-      placeholder="Phone No"
-      value={formData.phoneNo}
-      onChange={changeHandler}
-      className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-2" 
-      />
-
-      <br></br>
-      <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left" htmlFor="email">Email</label>
-      <br></br>
-      <input 
-      type="text" 
-      name="email"
-      id="email"
-      placeholder="yashmathur14@gmail.com"
-      value={formData.email}
-      onChange={changeHandler}
-      className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-2"
-      />
-
-      <br></br>
-      <label className="font-semibold text-sm font-Poppins tracking-wide sm:text-base whitespace-nowrap w-full text-white mt-2 mb-4 text-left"  htmlFor='address'>Address(Google Maps Url)</label>
-      <br></br>
-      <input
-      type="text"
-      name="address"
-      id='address'
-      value={formData.address}
-      onChange={changeHandler}
-      className="grow border w-full rounded border-[#ca403b] py-2 px-3 text-sm sm:text-base  bg-[#f7f3f5] focus:outline-[#EF4D48] placeholder:font-Poppins placeholder:text-sm mt-2 mb-2"
-      />
-        <br></br>
-        <br></br>
-      <button className='bg-blue-500 text-white font-bold rounded py-2 px-4 '>Save
-      </button>
-
-     </form>
+    <div className="bg-white px-6 py-12 sm:py-24 lg:px-8">
+    <div className="mx-auto max-w-xl flex flex-col items-center justify-center text-center">
+      <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-custom-color">NGO Registration Form</h1>
+     
     </div>
+    <form className="mx-auto mt-16 max-w-xl sm:mt-20" onSubmit={submitHandler}>
+      <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+        <div>
+          <label htmlFor="ngoName" className="block text-sm font-semibold leading-6 text-gray-900">NGO Name</label>
+          <div className="mt-2.5">
+            <input 
+              type="text" 
+              name="ngoName"
+              id="ngoName"
+              placeholder="Ngo Name"
+              value={formData.ngoName}
+              onChange={changeHandler}
+              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+        <div>
+          <label htmlFor="phoneNo" className="block text-sm font-semibold leading-6 text-gray-900">Phone No</label>
+          <div className="mt-2.5">
+            <input 
+              type="number" 
+              name="phoneNo"
+              id="phoneNo"
+              placeholder="Phone No"
+              value={formData.phoneNo}
+              onChange={changeHandler}
+              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+        <div className="sm:col-span-2">
+          <label htmlFor="email" className="block text-sm font-semibold leading-6 text-gray-900">Email</label>
+          <div className="mt-2.5">
+            <input 
+              type="text" 
+              name="email"
+              id="email"
+              placeholder="yashmathur14@gmail.com"
+              value={formData.email}
+              onChange={changeHandler}
+              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+        <div className="sm:col-span-2">
+          <label htmlFor='address' className="block text-sm font-semibold leading-6 text-gray-900">Address(Google Maps Url)</label>
+          <div className="mt-2.5">
+            <input
+              type="text"
+              name="address"
+              id='address'
+              value={formData.address}
+              onChange={changeHandler}
+              className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6"
+            />
+          </div>
+        </div>
+      </div>
+      <div className="mt-10">
+        <button type="submit" className='bg-blue-600 text-white rounded-sm py-2 w-full block'>Save →</button>
+      </div>
+    </form>
+  </div>
   );
 }
 
-export default App;
+export default NgoRegistration;

@@ -1,36 +1,14 @@
-// import logo from './logo.svg';
-// import './App.css';
-// import Header from './components/Navbar';
 
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <Header/>
-//       <header className="App-header">
-        
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
 import React from 'react';
 import { BrowserRouter as Router, Route,  Routes } from 'react-router-dom';
 import Header from './components/Navbar';
 import Home from './pages/Home';
+import SignUp from './components/SignUp';
+import SignIn from './components/SignIn';
+import DonorListForm from './components/DonorList';
+import NgoRegistration from './components/NgoList';
+import DonorRegistration from './pages/DonorRegistration';
+import NgoRegistrationPage from './pages/NgoRegistration';
 
 function App() {
   return (
@@ -39,7 +17,11 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home/>} />
-        
+          <Route path='/signup'element = {<SignUp/>} />
+          <Route path='/signin'element = {<SignIn/>} />
+          <Route path='/donor-registration' element={<DonorRegistration/>} />
+          <Route path='/ngo-registration' element={<NgoRegistrationPage/>} />
+          
         </Routes>
       </div>
     </Router>
