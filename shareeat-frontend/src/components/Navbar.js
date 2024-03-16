@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const divStyle = {
@@ -18,6 +19,7 @@ const Header = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [navbar, setNavbar] = useState(false);
+    const [logout , setlogout] = useState(true);
     // const [showSignUp, setShowSignUp] = useState(false);
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -119,16 +121,32 @@ const Header = () => {
                                 }}>
                                     Sign In
                                 </button>
-                                
+
 
                             </>
                         )}
+                        {logout && localStorage.getItem('token') && (
+                            <>
+                             <button className="text-white text-sm p-2 rounded-sm border " onClick={() => {
+                            localStorage.removeItem('token');
+                            setlogout(false);
+                            Swal.fire(
+                                'Success!',
+                                'You have signed out successfully.',
+                                'success'
+                            );
+                        }}>
+                            Sign out
+                        </button>
+                            </>
+                        )}
+                       
                     </div>
-                   
+
                 </div>
 
                 <div className="hidden space-x-3 md:inline-block">
-             
+
                 </div>
             </div>
         </nav>

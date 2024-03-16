@@ -1,7 +1,10 @@
 import { useState } from 'react';
-
+import { REGISTERNGO } from '../Utils/constant';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 function NgoRegistration() {
+  const navigate = useNavigate()
   const [formData,setFormData] = useState({
     ngoName: "",
     phoneNo: "",
@@ -17,9 +20,34 @@ function NgoRegistration() {
 
   function submitHandler(event) {
     event.preventDefault();
-    console.log(formData);
-  }
 
+    fetch(`${REGISTERNGO}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+      Swal.fire(
+        'Success!',
+        'Your data has been submitted successfully!',
+        'success'
+      );
+    })
+    navigate('/')
+    .catch((error) => {
+      console.error('Error:', error);
+      Swal.fire(
+        'Error!',
+        'There was an error submitting your data.',
+        'error'
+      );
+    });
+  }
+    // console.log(formData);
   return (
     
     <div className="bg-white px-6 py-12 sm:py-24 lg:px-8">

@@ -2,18 +2,33 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Header from './Navbar';
 import Footer from './Footer';
+import { SIGNIN, SIGNUP } from '../Utils/constant';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
+    const navigate = useNavigate();
     const [password, setPassword] = useState('');
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         try {
-            const response = await axios.post('/signIn', { email, password });
+            const response = await axios.post( `${SIGNIN}`, { email, password });
             localStorage.setItem('token', response.data.token);
+            Swal.fire(
+                'Success!',
+                'You have signed in successfully.',
+                'success'
+            );
+            navigate('/')
         } catch (error) {
             console.error('Error:', error);
+            Swal.fire(
+                'Error!',
+                'There was a problem with your sign in.',
+                'error'
+            );
         }
     };
     return (
@@ -33,7 +48,7 @@ const SignIn = () => {
                     </div>
 
                     <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-                        <form className="space-y-6" action="#" method="POST">
+
                             <div>
                                 <label htmlFor="email" className="block text-sm font-medium leading-6 text-custom-color">Email address</label>
                                 <div className="mt-2">
@@ -58,9 +73,9 @@ const SignIn = () => {
                             </div>
 
                             <div>
-                                <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
-                            </div>
-                        </form>
+                        <button type="submit" className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 mt-6">Sign in</button>
+                    </div>
+                        
 
 
                     </div>
