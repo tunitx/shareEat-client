@@ -10,7 +10,7 @@ return (
     <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
 </div>
 
-<div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
+<div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6 ">
     <div class="relative">
         
         <div class="flex items-center justify-center -space-x-2">
