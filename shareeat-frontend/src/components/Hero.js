@@ -10,9 +10,9 @@ const Banner = () => {
             {/* <!-- Themes: blue, purple and teal --> */}
             <div data-theme="teal" class="mx-auto max-w-6xl">
 
-                <section class="font-sans text-black">
+                <section class="font-sans text-black ">
                     <div class="[ lg:flex lg:items-center ] [ fancy-corners fancy-corners--large fancy-corners--top-left fancy-corners--bottom-right ]">
-                        <div class="flex-shrink-0 self-stretch sm:flex-basis-40 md:flex-basis-50 xl:flex-basis-60">
+                        <div class="flex-shrink-0 self-stretch sm:flex-basis-40 md:flex-basis-50 xl:flex-basis-60 mr-6">
                             <div class="h-full">
                                 <article class="h-full">
                                     <div class="h-full">
