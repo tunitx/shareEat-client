@@ -9,9 +9,9 @@ const NgoTable = ({ ngos }) => {
 
     return (
         <div className="overflow-x-auto fade-in w-full flex flex-col justify-center mb-16">
-            <table className="w-full border-2 border-[#305D2B] max-w-full">
+            <table className="w-full border-2 border-brown max-w-full">
                 <thead className="w-full">
-                    <tr className="bg-[#305D2B] text-white w-full">
+                    <tr className="bg-brown text-white w-full">
                         <th className="p-3 text-center border-white border-r whitespace-nowrap font-bold font-Poppins">
                             Name
                         </th>

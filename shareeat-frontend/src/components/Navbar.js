@@ -19,7 +19,7 @@ const Header = () => {
 
     const [isOpen, setIsOpen] = useState(false);
     const [navbar, setNavbar] = useState(false);
-    const [logout , setlogout] = useState(true);
+    const [logout, setlogout] = useState(true);
     // const [showSignUp, setShowSignUp] = useState(false);
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -28,7 +28,7 @@ const Header = () => {
 
 
     return (
-        <nav className="w-full border-b shadow gradient-bg-footer">
+        <nav className="w-full border-b shadow gradient-bg-footer h-200">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
                 <div>
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
@@ -79,7 +79,7 @@ const Header = () => {
                 </div>
                 <div>
                     <div
-                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ml-30 ${navbar ? "block" : "hidden"
+                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ml-30 relative left-20 ${navbar ? "block" : "hidden"
                             }`}
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
@@ -104,7 +104,7 @@ const Header = () => {
 
                     </div>
                 </div>
-                <div className="flex flex-row ">
+                <div className="flex flex-row  relative left-52">
                     <div className=" flex flex-row justify-start">
 
                         <button
@@ -133,20 +133,20 @@ const Header = () => {
                         )}
                         {logout && localStorage.getItem('token') && (
                             <>
-                             <button className="text-white text-sm p-2 rounded-sm border " onClick={() => {
-                            localStorage.removeItem('token');
-                            setlogout(false);
-                            Swal.fire(
-                                'Success!',
-                                'You have signed out successfully.',
-                                'success'
-                            );
-                        }}>
-                            Sign out
-                        </button>
+                                <button className="text-white text-sm p-2 rounded-sm border " onClick={() => {
+                                    localStorage.removeItem('token');
+                                    setlogout(false);
+                                    Swal.fire(
+                                        'Success!',
+                                        'You have signed out successfully.',
+                                        'success'
+                                    );
+                                }}>
+                                    Sign out
+                                </button>
                             </>
                         )}
-                       
+
                     </div>
 
                 </div>

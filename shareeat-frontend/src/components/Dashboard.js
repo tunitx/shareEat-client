@@ -43,6 +43,7 @@ function Dashboard() {
     return (
         <div className="flex flex-col min-h-screen bg-white">
         <div className="grid grid-cols-1 gap-4 px-4 mt-8 sm:grid-cols-1 sm:px-8 bg-white ">
+        <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-custom-color  border-b border-custom-color text-center">Touch the Dashboard to expand. </h2>
             <div class="flex items-center bg-white border rounded-sm overflow-hidden shadow">
                 <div class="p-4 bg-green-400"><svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-white" fill="none"
                     viewBox="0 0 24 24" stroke="currentColor">
@@ -58,7 +59,7 @@ function Dashboard() {
                     <div class="px-4 text-gray-700">
                         {/* <p>{totalListings}</p> */}
                         <h3 class="text-sm tracking-wider">Total Available Donors</h3>
-                        <p class="text-3xl">{Object.keys(donors).length}</p>
+                        <p class="text-3xl text-left">{Object.keys(donors).length}</p>
 
                     </div>
                 </button>
@@ -75,7 +76,7 @@ function Dashboard() {
                 }}>
                 <div class="px-4 text-gray-700">
                     <h3 class="text-sm tracking-wider">Total Available Donor listings</h3>
-                    <p class="text-3xl">{totalListings}</p>
+                    <p class="text-3xl text-left">{totalListings}</p>
                 </div>
 
                 </button>
@@ -94,11 +95,13 @@ function Dashboard() {
 
                 <div class="px-4 text-gray-700">
                     <h3 class="text-sm tracking-wider">Total NGOs</h3>
-                    <p class="text-3xl"> {Object.keys(ngos).length}</p>
+                    <p class="text-3xl text-left"> {Object.keys(ngos).length}</p>
 
                 </div>
                 </button>
+               
             </div>
+            <span className="text-s md:text-s font-bold tracking-tight text-custom-color  border-b border-custom-color text-center">Click on Address to open map view, on phone to call and email to mail.</span>
             {donorsOnClick && (
                 <DonorTable donors={donors} />
 

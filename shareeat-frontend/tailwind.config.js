@@ -7,6 +7,12 @@ module.exports = {
 
       colors: {
         'custom-color': '#45242f',
+        'brown' : '#48262b'
+      },
+      spacing: {
+        '240': '240px',
+        '100': '150px',
+        '200': '80px'
       },
     },
   },
