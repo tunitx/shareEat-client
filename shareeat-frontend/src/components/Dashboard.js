@@ -6,6 +6,9 @@ import ListingTable from "./ListingTable";
 import NgoTable from "./NGOtable";
 import { GET_ALL_DONORS, GET_ALL_NGOS } from "../Utils/constant";
 function Dashboard() {
+    
+
+
     const [donors, setDonors] = useState([]);
     const [listings, setListings] = useState([]);
     const [ngos, setNgos] = useState([]);
@@ -13,6 +16,38 @@ function Dashboard() {
     const [donorsOnClick, setDonorsOnClick] = useState(false);
     const [listingOnClick, setListingOnClick] = useState(false);
     const [ngoTableOnCLick, setNgosTableOnCLick] = useState(false);
+    const [count, setCount] = useState(0);
+    const [listingCount, setListingCount] = useState(0);
+    
+const [ngoCount, setNgoCount] = useState(0);
+const ngosCount = Object.keys(ngos).length;
+    
+const donorsCount = Object.keys(donors).length;
+useEffect(() => {
+    if (count < donorsCount) {
+      const timer = setTimeout(() => {
+        setCount(count + 1);
+      }, 80); // Change the time as needed
+      return () => clearTimeout(timer);
+    }
+  }, [count, donorsCount]);
+  useEffect(() => {
+    if (listingCount < totalListings) {
+      const timer = setTimeout(() => {
+        setListingCount(listingCount + 1);
+      }, 80); // Change the time as needed
+      return () => clearTimeout(timer);
+    }
+  }, [listingCount, totalListings]);
+  useEffect(() => {
+    if (ngoCount < ngosCount) {
+      const timer = setTimeout(() => {
+        setNgoCount(ngoCount + 1);
+      }, 80); // Change the time as needed
+      return () => clearTimeout(timer);
+    }
+  }, [ngoCount, ngosCount]);
+  
 
     useEffect(() => {
         axios.get(`${GET_ALL_DONORS}`)
@@ -59,7 +94,8 @@ function Dashboard() {
                     <div class="px-4 text-gray-700">
                         {/* <p>{totalListings}</p> */}
                         <h3 class="text-sm tracking-wider">Total Available Donors</h3>
-                        <p class="text-3xl text-left">{Object.keys(donors).length}</p>
+                        {/* <p class="text-3xl text-left">{Object.keys(donors).length}</p> */}
+                         <p class="text-3xl text-left">{count}</p>
 
                     </div>
                 </button>
@@ -76,7 +112,7 @@ function Dashboard() {
                 }}>
                 <div class="px-4 text-gray-700">
                     <h3 class="text-sm tracking-wider">Total Available Donor listings</h3>
-                    <p class="text-3xl text-left">{totalListings}</p>
+                    <p class="text-3xl text-left">{listingCount}</p>
                 </div>
 
                 </button>
@@ -95,7 +131,7 @@ function Dashboard() {
 
                 <div class="px-4 text-gray-700">
                     <h3 class="text-sm tracking-wider">Total NGOs</h3>
-                    <p class="text-3xl text-left"> {Object.keys(ngos).length}</p>
+                    <p class="text-3xl text-left"> {ngoCount}</p>
 
                 </div>
                 </button>
