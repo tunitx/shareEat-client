@@ -30,7 +30,7 @@ const Header = () => {
     return (
         <nav className="w-full border-b shadow gradient-bg-footer h-200">
             <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-                <div>
+                <div >
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <Link to="/">
                             {/*<h2 className="text-2xl font-bold text-white">Collectica</h2>*/}
@@ -79,11 +79,11 @@ const Header = () => {
                 </div>
                 <div>
                     <div
-                        className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ml-30 relative left-20 ${navbar ? "block" : "hidden"
-                            }`}
+                    //    className={`flex-1 justify-self-center pb-3 mt-8 sm:hidden gradient-bg-footer lg:block md:pb-0 md:mt-2 ml-30 relative   ${navbar ? "block" : "hidden  right-20"}`}
+                    className={`flex-1 justify-self-center pb-3 mt-8 sm:hidden gradient-bg-footer lg:block md:pb-0 md:mt-2 ml-30 relative ${navbar ? "" : "hidden right-20"}`}
                     >
-                        <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-                            <li className="text-white hover:text-indigo-200">
+                        <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0  m-5 mt-3 ">
+                            <li className="text-white hover:text-indigo-200 ">
                                 <Link to="/">Home</Link>
                             </li>{" "}
                             <li className="text-white hover:text-indigo-200">
@@ -95,45 +95,28 @@ const Header = () => {
                             <li className="text-white hover:text-indigo-200">
                                 <Link to="/donor-registration">Donor</Link>
                             </li>
+                            <li className="text-white hover:text-indigo-200">
+                                <Link to="/donor-listing">List Food</Link>
+                            </li>
 
+                            <div className="flex flex-row justify-around" >
 
-                        </ul>
-                        <div className="mt-3 space-y-2 lg:hidden md:hidden">
-                        </div>
+                           
+                            {!localStorage.getItem('token') && (
+                                <div className="flex flex-row justify-evenly space-x-4">
+                               
+                            <li className="text-white  hover:text-indigo-200">
+                                <Link to="/signup">Sign up</Link>
+                            </li>
+                            <li className="text-white hover:text-indigo-200">
+                                <Link to="/signin">Sign In</Link>
+                            </li>
+                            </div>
 
-
-                    </div>
-                </div>
-                <div className="flex flex-row  relative left-52">
-                    <div className=" flex flex-row justify-start">
-
-                        <button
-                            // to="javascript:void(0)
-                            onClick={() => { navigate('/donor-listing') }}
-                            className="text-white w-full text-sm p-2 bg-[#e32970] hover:bg-[#bd255f] rounded-sm flex flex-row justify-center items-center shadow-md shadow-gray-700 mr-2"
-                        >
-                            List Food
-                        </button>
-                    </div>
-                    <div className=" flex flex-row ">
-
-                        {!localStorage.getItem('token') && (
+                            )}
+                             {logout && localStorage.getItem('token') && (
                             <>
-                                <button className="text-white text-sm p-2 rounded-sm border mr-2" onClick={() => navigate('/signup')}>
-                                    SignUp
-                                </button>
-                                <button className="text-white text-sm p-2 rounded-sm border " onClick={() => {
-                                    navigate('/signin')
-                                }}>
-                                    Sign In
-                                </button>
-
-
-                            </>
-                        )}
-                        {logout && localStorage.getItem('token') && (
-                            <>
-                                <button className="text-white text-sm p-2 rounded-sm border " onClick={() => {
+                             <li className="text-white hover:text-indigo-200"  onClick={() => {
                                     localStorage.removeItem('token');
                                     setlogout(false);
                                     Swal.fire(
@@ -141,15 +124,20 @@ const Header = () => {
                                         'You have signed out successfully.',
                                         'success'
                                     );
-                                }}>
-                                    Sign out
-                                </button>
+                                }} >
+                                <Link to="/">Sign out</Link>
+                            </li>
+                            
                             </>
-                        )}
+                             )}
+ </div>
+
+                        </ul>
+
 
                     </div>
-
                 </div>
+              
 
                 <div className="hidden space-x-3 md:inline-block">
 

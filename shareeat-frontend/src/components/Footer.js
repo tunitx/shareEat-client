@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 function Footer() {
     // const navigate = useNavigate()
     return (
-        <div className="w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer h-100 ">
+        <div className="w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer h-full">
             <div className="w-full flex sm:flex-row flex-col justify-between items-center my-4">
                 <div className="flex flex-[0.25] justify-center items-center">
                     <Link to="/" className="text-white">
@@ -31,32 +31,17 @@ function Footer() {
                         </p>
                     </Link>
 
-                    {!localStorage.getItem('token') && (
-                        <>
-
-                        <Link to="/signin ">
-                        <p className="text-white text-base text-center mx-2 cursor-pointer">
-                            Sign In
-                        </p>
-                    </Link>
-                    <Link to="/signup ">
-                    <p className="text-white text-base text-center mx-2 cursor-pointer">
-                        Sign Up
-                    </p>
-                </Link>
-                </>
-
-                    )}
+                   
                     
                 </div>
 
-                <div className="flex flex-row justify-center items-center">
+                <div className="flex flex-row justify-center items-center h-20">
                
-                    <p className="text-white text-right text-xs relative w-full relative right-24">
+                    <p className="text-white text-right text-xs relative w-full  right-24 ">
                         &copy;2024 All rights reserved
                     </p>
 
-                    <p className="text-white text-right text-xs relative w-240 text-center ">
+                    <p className="text-white  text-xs relative w-240 text-center ">
                         Made with ❤️ by DevChef
                     </p>
                     

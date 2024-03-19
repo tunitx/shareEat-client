@@ -27,26 +27,39 @@ useEffect(() => {
     if (count < donorsCount) {
       const timer = setTimeout(() => {
         setCount(count + 1);
-      }, 80); // Change the time as needed
+      }, 50); // Change the time as needed
       return () => clearTimeout(timer);
+
     }
-  }, [count, donorsCount]);
-  useEffect(() => {
     if (listingCount < totalListings) {
-      const timer = setTimeout(() => {
-        setListingCount(listingCount + 1);
-      }, 80); // Change the time as needed
-      return () => clearTimeout(timer);
-    }
-  }, [listingCount, totalListings]);
-  useEffect(() => {
-    if (ngoCount < ngosCount) {
-      const timer = setTimeout(() => {
-        setNgoCount(ngoCount + 1);
-      }, 80); // Change the time as needed
-      return () => clearTimeout(timer);
-    }
-  }, [ngoCount, ngosCount]);
+        const timer = setTimeout(() => {
+          setListingCount(listingCount + 1);
+        }, 50); // Change the time as needed
+        return () => clearTimeout(timer);
+      }
+      if (ngoCount < ngosCount) {
+        const timer = setTimeout(() => {
+          setNgoCount(ngoCount + 1);
+        }, 50); // Change the time as needed
+        return () => clearTimeout(timer);
+      }
+  }, [count, donorsCount, listingCount, totalListings, ngoCount,ngosCount]);
+//   useEffect(() => {
+//     if (listingCount < totalListings) {
+//       const timer = setTimeout(() => {
+//         setListingCount(listingCount + 1);
+//       }, 80); // Change the time as needed
+//       return () => clearTimeout(timer);
+//     }
+//   }, [listingCount, totalListings]);
+//   useEffect(() => {
+//     if (ngoCount < ngosCount) {
+//       const timer = setTimeout(() => {
+//         setNgoCount(ngoCount + 1);
+//       }, 80); // Change the time as needed
+//       return () => clearTimeout(timer);
+//     }
+//   }, [ngoCount, ngosCount]);
   
 
     useEffect(() => {
