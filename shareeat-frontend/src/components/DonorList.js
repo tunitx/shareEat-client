@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { REGISTERDONOR } from '../Utils/constant';
-// import './App.css';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
@@ -54,13 +53,9 @@ function DonorListForm() {
     }
 
     return (
-
-
-
-
         <div className="bg-white px-6 py-12 sm:py-24 lg:px-8 flex flex-col items-center">
             <form onSubmit={submitHandler} className="mx-auto  max-w-xl ">
-                <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-custom-color mb-8 whitespace-nowrap  border-b border-custom-color">Eatery Donor Registration</h1>
+                <h1 className="text-4xl  font-bold tracking-tight text-custom-color mb-8 whitespace-wrap  border-b border-custom-color ">Eatery Donor Registration</h1>
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div>
                         <label for="name" className="block text-sm font-semibold leading-6 text-gray-900">Name</label>

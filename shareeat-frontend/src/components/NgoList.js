@@ -48,7 +48,6 @@ function NgoRegistration() {
       );
     });
   }
-    // console.log(formData);
   return (
     
     <div className="bg-white px-6 py-12 sm:py-24 lg:px-8">

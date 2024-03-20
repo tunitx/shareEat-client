@@ -20,7 +20,6 @@ const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [navbar, setNavbar] = useState(false);
     const [logout, setlogout] = useState(true);
-    // const [showSignUp, setShowSignUp] = useState(false);
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
@@ -33,11 +32,9 @@ const Header = () => {
                 <div >
                     <div className="flex items-center justify-between py-3 md:py-5 md:block">
                         <Link to="/">
-                            {/*<h2 className="text-2xl font-bold text-white">Collectica</h2>*/}
                             <span className="px-2 py-1 font-bold text-3xl italic text-white">
                                 ShareEat
                             </span>
-                            {/*<span className="py-1 font-semibold italic text-white">Auction-NFT</span>*/}
                         </Link>
                         <div className="md:hidden">
                             <button
@@ -79,8 +76,7 @@ const Header = () => {
                 </div>
                 <div>
                     <div
-                    //    className={`flex-1 justify-self-center pb-3 mt-8 sm:hidden gradient-bg-footer lg:block md:pb-0 md:mt-2 ml-30 relative   ${navbar ? "block" : "hidden  right-20"}`}
-                    className={`flex-1 justify-self-center pb-3 mt-8 sm:hidden gradient-bg-footer lg:block md:pb-0 md:mt-2 ml-30 relative ${navbar ? "" : "hidden right-20"}`}
+                        className={`flex-1 justify-self-center pb-3 mt-8 sm:hidden gradient-bg-footer lg:block md:pb-0 md:mt-2 ml-30 relative ${navbar ? "" : "hidden right-20"}`}
                     >
                         <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0  m-5 mt-3 ">
                             <li className="text-white hover:text-indigo-200 ">
@@ -100,48 +96,38 @@ const Header = () => {
                             </li>
 
                             <div className="flex flex-row justify-around" >
+                                {!localStorage.getItem('token') && (
+                                    <div className="flex flex-row justify-evenly space-x-4">
 
-                           
-                            {!localStorage.getItem('token') && (
-                                <div className="flex flex-row justify-evenly space-x-4">
-                               
-                            <li className="text-white  hover:text-indigo-200">
-                                <Link to="/signup">Sign up</Link>
-                            </li>
-                            <li className="text-white hover:text-indigo-200">
-                                <Link to="/signin">Sign In</Link>
-                            </li>
+                                        <li className="text-white  hover:text-indigo-200">
+                                            <Link to="/signup">Sign up</Link>
+                                        </li>
+                                        <li className="text-white hover:text-indigo-200">
+                                            <Link to="/signin">Sign In</Link>
+                                        </li>
+                                    </div>
+
+                                )}
+                                {logout && localStorage.getItem('token') && (
+                                    <>
+                                        <li className="text-white hover:text-indigo-200" onClick={() => {
+                                            localStorage.removeItem('token');
+                                            setlogout(false);
+                                            Swal.fire(
+                                                'Success!',
+                                                'You have signed out successfully.',
+                                                'success'
+                                            );
+                                        }} >
+                                            <Link to="/">Sign out</Link>
+                                        </li>
+                                    </>
+                                )}
                             </div>
-
-                            )}
-                             {logout && localStorage.getItem('token') && (
-                            <>
-                             <li className="text-white hover:text-indigo-200"  onClick={() => {
-                                    localStorage.removeItem('token');
-                                    setlogout(false);
-                                    Swal.fire(
-                                        'Success!',
-                                        'You have signed out successfully.',
-                                        'success'
-                                    );
-                                }} >
-                                <Link to="/">Sign out</Link>
-                            </li>
-                            
-                            </>
-                             )}
- </div>
-
                         </ul>
-
-
                     </div>
                 </div>
-              
-
-                <div className="hidden space-x-3 md:inline-block">
-
-                </div>
+                <div className="hidden space-x-3 md:inline-block"></div>
             </div>
         </nav>
     );

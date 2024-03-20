@@ -7,7 +7,6 @@ const Banner = () => {
     return (
 
         <div class="min-h-screen flex flex-col p-8 sm:p-16 md:p-24 justify-center bg-white">
-            {/* <!-- Themes: blue, purple and teal --> */}
             <div data-theme="teal" class="mx-auto max-w-6xl">
 
                 <section class="font-sans text-black ">
@@ -32,7 +31,7 @@ const Banner = () => {
                     </div>
                 </section>
             </div>
-            <JoinUs/>
+            <JoinUs />
 
         </div>
 

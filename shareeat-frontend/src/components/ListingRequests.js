@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import { useState } from 'react';
 
 const DonorTable = ({ donors }) => {
-    
+
     const [openModal, setOpenModal] = useState(null);
     return (
         <div className="overflow-x-auto fade-in w-full flex flex-col justify-center mb-16">
@@ -77,7 +77,6 @@ const DonorTable = ({ donors }) => {
                     ))}
                 </tbody>
             </table>
-
         </div>
     );
 };

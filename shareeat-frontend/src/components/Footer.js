@@ -1,16 +1,13 @@
-// import timelessLogo from '../assets/timeless.png'
 
 import { Link } from "react-router-dom"
 
 function Footer() {
-    // const navigate = useNavigate()
     return (
         <div className="w-full flex md:justify-center justify-between items-center flex-col p-4 gradient-bg-footer h-full">
             <div className="w-full flex sm:flex-row flex-col justify-between items-center my-4">
                 <div className="flex flex-[0.25] justify-center items-center">
                     <Link to="/" className="text-white">
                         <span className="px-2 py-1 font-bold text-xl italic">ShareEat</span>
-                        {/*<span className="py-1 font-semibold italic">Auction-NFT</span>*/}
                     </Link>
                 </div>
 
@@ -37,7 +34,7 @@ function Footer() {
 
                 <div className="flex flex-row justify-center items-center h-20">
                
-                    <p className="text-white text-right text-xs relative w-full  right-24 ">
+                    <p className="text-white text-right text-xs relative w-full  right-16 ">
                         &copy;2024 All rights reserved
                     </p>
 

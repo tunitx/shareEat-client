@@ -5,8 +5,6 @@ import { useState } from 'react';
 
 const NgoTable = ({ ngos }) => {
     const [openModal, setOpenModal] = useState(null);
-
-
     return (
         <div className="overflow-x-auto fade-in w-full flex flex-col justify-center mb-16">
             <table className="w-full border-2 border-brown max-w-full">
@@ -67,9 +65,6 @@ const NgoTable = ({ ngos }) => {
                                 </td>
 
                             </tr>
-
-
-
                         </React.Fragment>
                     ))}
                 </tbody>
